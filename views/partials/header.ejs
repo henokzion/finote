@@ -1,0 +1,22 @@
+<% include _header %>
+
+<div class="ui attached blue inverted stackable menu">
+	<div class="ui container">
+		<a class="item" href="/">
+			<i class="home icon"></i> home
+		</a>
+		<a class="item" href="/mems">
+			<i class="grid layout icon"></i> Members
+		</a>
+		<div class="right menu">
+			<% if(user) { %>
+				<a class="ui item">
+					<%= user.username %>
+				</a>
+				<a class="ui item" href="/logout">
+					logout
+				</a>
+			<% } %>
+        </div>
+	</div>
+	</div>

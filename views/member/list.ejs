@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+<br>
+<div class="ui container">
+    <div class="ui grid">
+        <div class="ui twelve wide column">
+            <h1><%= mems.length %> Members found</h1>
+            <div class="ui divider"></div>
+            <div class="ui massive middle aligned divided list">
+                <% mems.forEach((mem)=>{ %>
+                    <div class="item">
+                        <div class="right floated content">
+                            <div class="ui button">Edit</div>
+                        </div>
+                        <img class="ui avatar image" src="/images/avatar.png">
+                        <div class="content">
+                            <%= mem.first_name +" " +mem.last_name%>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+        <div class="ui four wide column">
+            <a href="/mems/new" class="ui button primay">Add a new Member</a>
+        </div>
+    </div>
+</div>
+<br>
+<% include ../partials/footer %>
