@@ -7,7 +7,7 @@
             <div class="ui divider"></div>
             <div class="ui massive middle aligned divided list">
                 <% mems.forEach((mem)=>{ %>
-                    <div class="item">
+                    <a class="item" href="/mems/<%= mem._id %>">
                         <div class="right floated content">
                             <div class="ui button">Edit</div>
                         </div>
@@ -15,7 +15,7 @@
                         <div class="content">
                             <%= mem.first_name +" " +mem.last_name%>
                         </div>
-                    </div>
+                    </a>
                 <% }) %>
             </div>
         </div>

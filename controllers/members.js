@@ -16,6 +16,19 @@ var getMembers = (req, res)=>{
     
 }
 
+var getMember = (req, res)=> {
+    Mem
+        .findById(req.params.memid)
+        .exec((err, mem)=>{
+            if(err){
+                res.render("error", {message : err});
+                return;
+            }
+
+            res.render("member/single", {user : req.user , mem });
+        })
+}
+
 var createMember = (req, res) =>{
     console.log(req.body.member);
     Mem
@@ -42,5 +55,6 @@ var newForm = (req, res) =>{
 module.exports = {
     getMembers,
     createMember,
-    newForm
+    newForm,
+    getMember
 }
