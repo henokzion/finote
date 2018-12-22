@@ -1,0 +1,93 @@
+<% include ../partials/header %>
+
+<div class="ui container">
+    <br>
+    <div class="ui raised very padded text container segment">
+        <form class="ui form" method="post" action="/mems">
+            <div class="two fields">
+                <div class="field">
+                    <label>First Name</label>
+                    <input placeholder="First Name" name="first_name" type="text">
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input placeholder="Last Name" name="last_name" type="text">
+                </div>
+            </div>
+            <div class="field">
+                <label>Gender</label>
+                <div class="ui selection dropdown">
+                    <div class="default text">Select</div>
+                    <i class="dropdown icon"></i>
+                    <input type="hidden" name="gender">
+                    <div class="menu">
+                        <div class="item" data-value="male">Male</div>
+                        <div class="item" data-value="female">Female</div>
+                    </div>
+                </div>
+            </div>
+            Date of birth
+            <div class="three fields">
+                <div class="field">
+                    <label>Day</label>
+                    <div class="ui selection dropdown">
+                        <div class="default text">Select</div>
+                        <i class="dropdown icon"></i>
+                        <input type="hidden" name="day">
+                        <div class="menu">
+                            <% for(var i = 1 ; i < 32; i++){ %>
+                                <div class="item" data-value="<%= i %>"><%= i %></div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Month</label>
+                    <div class="ui selection dropdown">
+                        <div class="default text">Select</div>
+                        <i class="dropdown icon"></i>
+                        <input type="hidden" name="month">
+                        <div class="menu">
+                            <% for(var i = 1 ; i < 12; i++){ %>
+                                <div class="item" data-value="<%= i %>"><%= i %></div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Year</label>
+                    <div class="ui selection dropdown">
+                        <div class="default text">Select</div>
+                        <i class="dropdown icon"></i>
+                        <input type="hidden" name="year">
+                        <div class="menu">
+                            <% for(var i = 2017 ; i > 1932; i--){ %>
+                                <div class="item" data-value="<%= i %>"><%= i %></div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label>Highest Education</label>
+                <div class="ui selection dropdown">
+                    <div class="default text">Select</div>
+                    <i class="dropdown icon"></i>
+                    <input type="hidden" name="education">
+                    <div class="menu">
+                        <div class="item" data-value="msc">Msc Degree</div>
+                        <div class="item" data-value="bsc">Bsc Degree</div>
+                        <div class="item" data-value="preparatory">Preparatory</div>
+                        <div class="item" data-value="highschool">Highscool</div>
+                        <div class="item" data-value="elementary">Elementary</div>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <input type="submit" class="ui button primary">
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<% include ../partials/footer %>
